@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Árbol de San Valentín</title>
+</head>
+<body>
+    <pre id="arbol"></pre>
+    <script>
+        function generarArbol() {
+            const filas = 5;
+            let arbolStr = '';
+            
+            for (let i = 1; i <= filas; i++) {
+                arbolStr += ' '.repeat(filas - i);
+                arbolStr += '*'.repeat(2 * i - 1);
+                arbolStr += '\n';
+            }
+            
+            // Tronco
+            for (let i = 0; i < 2; i++) {
+                arbolStr += ' '.repeat(filas - 1) + '*\n';
+            }
+            
+            document.getElementById('arbol').textContent = arbolStr;
+        }
+        
+        generarArbol();
+    </script>
+</body>
+</html>
